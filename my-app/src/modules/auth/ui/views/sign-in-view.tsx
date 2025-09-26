@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { FaGithub, FaGoogle } from "react-icons/fa";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { OctagonAlertIcon } from "lucide-react";
@@ -41,6 +42,7 @@ export const SignInView = () => {
             {
                 email: data.email,
                 password: data.password,
+                callbackURL: "/"
             },
             {
                 onSuccess: () => {
@@ -116,9 +118,11 @@ export const SignInView = () => {
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
                                     <Button variant="outline" className="w-full" type="button">
+                                        <FaGoogle className="mr-2" />
                                         Google
                                     </Button>
                                     <Button variant="outline" className="w-full" type="button">
+                                        <FaGithub className="mr-2" />
                                         GitHub
                                     </Button>
                                 </div>
@@ -131,7 +135,7 @@ export const SignInView = () => {
                             </div>
                         </form>
                     </Form>
-                    <div className="bg-radial from-green-700 to-green-900 relative hidden md:flex flex-col gap-y-4 items-center justify-center">
+                    <div className="bg-radial from-sidebar-accent to-sidebar relative hidden md:flex flex-col gap-y-4 items-center justify-center">
                         <img src="/logo.svg" alt="Image"  className="h-[92px] w-[92px]"/>
                         <p className="text-2xl font-semibold text-white"> 
                             Product Name
