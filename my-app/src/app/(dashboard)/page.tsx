@@ -3,12 +3,9 @@ import { redirect } from "next/navigation";
 
 import { auth } from "@/lib/auth";
 import { HomeView } from "@/modules/home/ui/views/home-view";
-import { caller } from "@/trpc/server";
 
 
 const Home = async () => {
-  const greeting = await caller.hello({ text: "from tRPC Server" }); 
-
   const session = await auth.api.getSession({
     headers: await headers(),
   }) 
@@ -19,7 +16,6 @@ const Home = async () => {
 
   return (
     <div>
-      <p>{greeting.greeting}</p>
       <HomeView />
     </div>
   )
