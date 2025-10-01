@@ -1,6 +1,6 @@
 import { auth } from "@/lib/auth";
 import { loadSearchParams } from "@/modules/agents/params";
-import { AgentsHeader } from "@/modules/agents/ui/components/header";
+import { AgentsHeader } from "@/components/header";
 import { AgentsLoader } from "@/modules/agents/ui/views/agents-loader";
 import { AgentsView } from "@/modules/agents/ui/views/agents-view";
 import { getQueryClient, trpc } from "@/trpc/server";
